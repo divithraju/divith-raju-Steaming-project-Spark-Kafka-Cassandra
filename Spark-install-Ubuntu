@@ -1,0 +1,40 @@
+Spark-3.5.1 Installation
+————————————————————————————————-
+: INSTRUCTIONS :
+
+[ You can change /home/divithraju/Downloads/path/ use your path location on your machine ]
+1. Download Hadoop and Java
+tar -zxvf spark-3.5.1.tar.gz (Extract the tar file)
+tar -zxvf jdk-8u391-linux-x64.tar (Extract the tar file)
+
+sudo apt-get install vim (Install USER Friendly Editer)
+
+vi .bashrc (Set the java Path in your Home Path)
+export JAVA_HOME=/home/divithraju/Downloads/jdk-8u391-linux-x64/jdk1.8.0_391
+export SPARK_HOME=/home/divithraju/Downloads/spark-3.5.1-bin-hadoop3
+export PATH=HOME/bin:JAVA_HOME/bin:SPARK_HOME/bin:PATH
+
+source .bashrc (Execute the bashrc file) echo JAVA_HOME (Check the java path
+[ You can change /home/divithraju/Downloads/path/ use your path location on your machine ]
+[ And don’t change any orther shell ]
+=============================
+
+2.Start Spark
+cd spark-3.5.1-bin-hadoop3
+ls -a
+cd conf  [ open file ]
+ls
+cd spark-env.sh.template spark-env.sh  [ Copy the file  ]
+vi spark-env.sh
+export JAVA_HOME=/home/divithraju/Downloads/jdk-8u391-linux-x64/jdk1.8.0_391  [ Add this comment in file ]
+cd ..
+bin/spark-shell [Scala]
+bin/pyspark
+sbin/start-all.sh [ start All spark Related Services ]
+http://<spark-master-host>:8080 [UI]
+
+Stop All Spark Related Services
+sbin/stop-all.sh
+
+
+
