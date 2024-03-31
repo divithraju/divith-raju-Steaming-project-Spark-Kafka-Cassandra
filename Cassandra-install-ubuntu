@@ -1,0 +1,57 @@
+Install Java 1.8
+
+https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+
+
+
+Intsall Pyton 2.7
+
+sudo apt-add-repository universe
+
+sudo apt update
+
+sudo apt install python2-minimal
+
+python2 -V
+
+
+
+Install Cassandra 3.11.13
+
+https://cassandra.apache.org/_/download.html
+
+tar -zxvf apache-cassandra-3.11.13-bin.tar.gz
+
+
+
+bin/cassandra -f
+
+bin/cqlsh
+
+
+
+CQL Commands 
+
+select * from system_schema.keyspaces ;
+
+
+
+Create keyspace 
+
+CREATE KEYSPACE mobapp WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+
+DESCRIBE KEYSPACE mobapp ;
+
+use mobapp
+
+
+
+Create table
+
+CREATE TABLE appinfo (sno int,appName varchar , userName varchar , gender varchar ,PRIMARY KEY (sno));
+
+DESCRIBE TABLES (show all tables)
+
+DESCRIBE TABLE appinfo; 
+
+
