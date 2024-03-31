@@ -1,0 +1,35 @@
+Embedded Zookeper
+
+[ You can change /home/divithraju/Downloads/path/ use your path location on your machine ]
+1. Download Kafka
+tar -zxvf kafka-3.0.6.tar.gz (Extract the tar file)
+
+sudo apt-get install vim (Install USER Friendly Editer)
+
+vi .bashrc (Set the java Path in your Home Path)
+
+export KAFKA_HOME=/home/divithraju/Downloads/kafka-3.0.6-src
+export PATH=HOME/bin:KAFKA_HOME/bin:PATH
+
+source .bashrc (Execute the bashrc file) echo KAFKA_HOME (Check the kafka path
+
+cd kafka-3.0.6-src
+bin/zookeper-server-start.sh config/zookeper.properties
+
+[open New Terminal ] - [ Don't close previous Terminal ]
+
+bin/kafka-server-start.sh config/server.properties
+
+[open New Terminal] -[ Don't close previous Terminal ] 
+
+bin/kafka-topics.sh --create --zookeper localhost:2181 --replication-factor 1 --paritions 1 --topic exampletopic    [ created Topic ]
+
+bin/kafka-topics.sh --list --zookeper localhost:2181  [ Showing list of Topics ]
+
+[ producer ] bin/kafka-console-producer.sh --broker-list localhost:2181 --topic  exampletopic [ Terminal ]
+
+[ consumer ] bin/kafka-console-producer.sh --broker-list localhost:2181 --topic  exampletopic --from-beginning [ Next Terminal ]
+
+
+
+
